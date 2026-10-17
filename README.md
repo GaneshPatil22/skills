@@ -8,6 +8,7 @@ A comprehensive collection of professional skills and specialized agents for [Cl
 .claude/
 ├── agents/                    # Specialized sub-agents
 │   ├── code-reviewer.md
+│   ├── commit-writer.md
 │   ├── debugger-assistant.md
 │   ├── refactor-wizard.md
 │   ├── security-auditor.md
@@ -31,6 +32,8 @@ A comprehensive collection of professional skills and specialized agents for [Cl
     ├── gemini-subagent/
     │   ├── SKILL.md
     │   └── references/        # Additional reference materials
+    ├── git-commit/
+    │   └── SKILL.md
     ├── performance-optimization/
     │   └── SKILL.md
     ├── refactoring-methodology/
@@ -50,6 +53,7 @@ Agents are specialized sub-agents that can be explicitly invoked during your Cla
 | Agent | Description |
 |-------|-------------|
 | **code-reviewer** | Performs systematic code review analyzing security vulnerabilities (SQL injection, XSS, auth issues), performance problems (N+1 queries, algorithmic complexity), bugs (race conditions, null references), and maintainability concerns. Returns structured feedback with severity levels and concrete fixes. |
+| **commit-writer** | Reads the working tree diff, classifies every changed file, stages the right set, and writes a structured commit message (title, description, max 3 detail lines of 10-15 words). Splits mixed working trees into separate logical commits and blocks secrets from being staged. |
 | **debugger-assistant** | Analyzes error messages, stack traces, and logs to identify root causes. Provides debugging strategies for common patterns like race conditions, memory leaks, async issues, and null references. Suggests concrete next steps. |
 | **refactor-wizard** | Guides safe, incremental refactoring with impact analysis. Detects code smells (duplication, long functions, deep nesting), suggests classic refactoring patterns, and ensures tests pass at each step. **Critical: Refactoring must NOT change behavior.** |
 | **security-auditor** | Identifies OWASP Top 10 vulnerabilities, injection attacks, broken access control, cryptographic failures, and insecure dependencies. Provides concrete remediation code examples. **Must be used before production deployments.** |
@@ -66,6 +70,7 @@ Skills are activated automatically based on task relevance, providing domain exp
 | **api-design** | Design consistent, maintainable REST and GraphQL APIs with proper versioning, error handling, and documentation. Apply when creating new APIs or refactoring existing ones. |
 | **code-review** | Perform thorough code reviews focusing on correctness, maintainability, performance, and best practices. Apply when reviewing pull requests, auditing code quality, or mentoring developers. |
 | **debugging-methodology** | Systematic debugging methodology to efficiently identify and fix bugs. Apply when encountering unexpected behavior, errors, or performance issues in any codebase. |
+| **git-commit** | Analyze changed files, stage them, and write a structured commit message describing the actual changes. Apply when committing work, writing commit messages, or splitting a messy working tree into clean commits. |
 | **performance-optimization** | Optimize application performance through profiling, benchmarking, caching, and resource management. Apply when addressing slow response times, high memory usage, or scalability concerns. |
 | **refactoring-methodology** | Safely refactor code using proven patterns to improve structure without changing behavior. Apply when improving code quality, reducing technical debt, or making code easier to extend. |
 | **test-strategy** | Create comprehensive testing strategies using the testing pyramid. Apply when writing tests, planning test coverage, or setting up testing infrastructure for any codebase. |
